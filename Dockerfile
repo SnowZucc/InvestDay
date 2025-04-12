@@ -1,4 +1,5 @@
-FROM node:16.15-alpine3.16
+FROM node:22.14-alpine
+
 
 # Create app directory
 WORKDIR /app
@@ -14,7 +15,6 @@ RUN npm install bcrypt
 
 # Bundle app source
 COPY . ./
-RUN npx prisma migrate deploy
 # Build the app
 # RUN npm run build
 EXPOSE 3000
